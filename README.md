@@ -1,46 +1,153 @@
-# Getting Started with Create React App
+# Bootstrapped Form
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Create a full form, with validations, with just 5 lines of code
 
-## Available Scripts
+# Getting started
 
-In the project directory, you can run:
+### Compatibility
 
-### `npm start`
+Your project needs to use React 16.3 or later.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Add Bootstrapped Form to your project by executing npm install bootstrap-form or yarn add bootstrap-form.
 
-### `npm test`
+### Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Here's an example of basic usage:
 
-### `npm run build`
+```javascript
+import React, { useState } from 'react';
+import BootstrapForm from 'bootstrap-form';
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ // comes with stying
+import 'bootstrap-form/dist/index.css';
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+function MyApp() {
 
-### `npm run eject`
+  return (
+    <div>
+     <BootstrapedForm
+    fields={{
+      email: "email|required",
+      password: "password|requiredvisibility",
+      confirmPassword: "password|required|visibility"
+      createAccount: "btn",
+    }}
+  />
+    </div>
+  );
+}
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Result gives you:
+![alt text](./assets/Screenshot%202022-11-21%20at%2000.21.52.png "form pic")
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Adding a select option & a checkbox using these code:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```javascript
+// comes with stying
+import "bootstrap-form/dist/index.css";
+const genderList = [
+  { name: "Male", value: "M" },
+  { name: "Female", value: "F" },
+];
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+function MyApp() {
+  return (
+    <div>
+      <BootstrapedForm
+        fields={{
+          gender: `select|${JSON.stringify(genderList)}`,
+          rememberMe: "checkbox",
+          createAccount: "btn",
+        }}
+      />
+    </div>
+  );
+}
+```
 
-## Learn More
+Result gives you
+![alt text](./assets/Screenshot%202022-11-21%20at%2000.33.59.png "form pic")
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+And then to get the form data after successful validation, a payload function will be returned with 3 arguments below:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```javascript
+<BootstrapedForm
+  payload={(data, isAccepted, notAccepted) => {
+    // do what ever you want to do here
+  }}
+  fields={{
+    gender: `select|${JSON.stringify(f)}`,
+    createAccount: "btn",
+  }}
+/>
+```
+
+You can also add an initial information to the form using the code below:
+
+```javascript
+<BootstrapedForm
+  preloadData={{
+    gender: "M",
+  }}
+  fields={{
+    gender: `select|${JSON.stringify(f)}`,
+    createAccount: "btn",
+  }}
+/>
+```
+
+# User guide
+
+### Bootstrapped Form
+
+Generate a working form, with 5 lines of code
+
+### Props
+
+| Prop name   |                               Description                                |
+| ----------- | :----------------------------------------------------------------------: |
+| fields      |  These is where you pass in your form title and values it should accept  |
+| preloadData | you want to have initial data on the for, use case is: edit profile form |
+| payload     |          return 3 args after form successfully pass validation:          |
+|             |                          1) the user form data                           |
+|             |                2) a success func, so data can be cleared                 |
+|             |              3) an error func, so data would not be cleared              |
+
+### Fields prop accepts the following:
+
+| Name        |                                   Description                                   |
+| ----------- | :-----------------------------------------------------------------------------: |
+| input type  |            input types includes, text, password, select, email, etc             |
+| required    |                   enables form to be checked for invalid data                   |
+| visibility  | these adds text visibility and an eye icon to input field, use case is password |
+| placeholder |                    these adds a placeholder to input fields                     |
+| button      |             adding a button or btn sting value, is read as a button             |
+
+### Preload prop accepts the following:
+
+| Name  |          Description           |
+| ----- | :----------------------------: |
+| Title | title of exisiting input field |
+| Value |  value to load into the field  |
+
+### Payload returns the following:
+
+| Name      |                 Description                 |
+| --------- | :-----------------------------------------: |
+| User data | returns the user form data after validation |
+| Success   | a success function, so data can be cleared  |
+| Error     | an error func, so data would not be cleared |
+
+# License
+
+The MIT License.
+
+# Author
+
+| ![alt text](./assets/Screenshot%202022-11-21%20at%2000.21.52.png "form pic")| Osaze Agbi |
+| | [My portfolio](https://tinyurl.com/osas-portfolio) |
+| | [twitter](https://twitter.com/OsazeAgbi) |
