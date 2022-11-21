@@ -1,5 +1,18 @@
 {
   "name": "bootstrap-form",
+  "description": "Get a complex form, with validation, with just 5 lines of code",
+  "homepage": "https://github.com/osaze12/bootstrap-form#readme",
+  "url": "https://github.com/osaze12/bootstrap-form/issues",
+  "email": "osazeagbi@gmail.com",
+  "keywords": [
+    "Form",
+    "Bootstrap",
+    "Library",
+    "Validation",
+    "Inputs",
+    "Button",
+    "btn"
+  ],
   "version": "1.0.0",
   "author": "Osaze Agbi osazeagbi@gmail.com",
   "main": "dist/index.js",
