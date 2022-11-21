@@ -2,6 +2,9 @@
 
 ### Create a full form, with validations, with just 5 lines of code
 
+<img src="./assets/loopgif.gif" width="400">
+
+
 # Getting started
 
 ### Compatibility
@@ -29,12 +32,13 @@ function MyApp() {
   return (
     <div>
      <BootstrapedForm
-    fields={{
-      email: "email|required",
-      password: "password|requiredvisibility",
-      confirmPassword: "password|required|visibility"
-      createAccount: "btn",
-    }}
+     
+       fields={{
+         email: "email|required",
+         password: "password|requiredvisibility",
+         confirmPassword: "password|required|visibility"
+         createAccount: "btn",
+       }}
   />
     </div>
   );
@@ -42,7 +46,8 @@ function MyApp() {
 ```
 
 Result gives you:
-![alt text](./assets/Screenshot%202022-11-21%20at%2000.21.52.png "form pic")
+
+<img src="./assets/Screenshot%202022-11-21%20at%2000.21.52.png" width="400"/>
 
 Adding a select option & a checkbox using these code:
 
@@ -70,16 +75,21 @@ function MyApp() {
 ```
 
 Result gives you
-![alt text](./assets/Screenshot%202022-11-21%20at%2000.33.59.png "form pic")
+
+<img src="./assets/Screenshot%202022-11-21%20at%2000.33.59.png" width="400"/>
+
 
 And then to get the form data after successful validation, a payload function will be returned with 3 arguments below:
 
 ```javascript
 <BootstrapedForm
+
   payload={(data, isAccepted, notAccepted) => {
     // do what ever you want to do here
   }}
+  
   fields={{
+  
     gender: `select|${JSON.stringify(f)}`,
     createAccount: "btn",
   }}
@@ -90,9 +100,11 @@ You can also add an initial information to the form using the code below:
 
 ```javascript
 <BootstrapedForm
+
   preloadData={{
     gender: "M",
   }}
+  
   fields={{
     gender: `select|${JSON.stringify(f)}`,
     createAccount: "btn",
@@ -147,7 +159,9 @@ Generate a working form, with 5 lines of code
 The MIT License.
 
 # Author
+<img src="./assets/my%20image.jpeg" width="200" style="border-radius:50%"/>
 
-| ![alt text](./assets/Screenshot%202022-11-21%20at%2000.21.52.png "form pic")| Osaze Agbi |
-| | [My portfolio](https://tinyurl.com/osas-portfolio) |
-| | [twitter](https://twitter.com/OsazeAgbi) |
+**Agbi Osaze**
+
+__osazeagbi@gmail.com__
+
