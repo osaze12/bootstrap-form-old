@@ -1,6 +1,7 @@
 {
   "name": "bootstrap-form",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "author": "Osaze Agbi osazeagbi@gmail.com",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
